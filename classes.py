@@ -22,3 +22,15 @@ class TarotDeck:
         else:
             cardTaken = self.cards.pop()
             return cardTaken
+        
+class Player:
+    def __init__(self, name):
+        self.name = name
+        self.hand = []
+
+    def getCard(self,deck):
+        self.hand.append(deck.pullCard())
+
+    def showHand(self):
+        for card in self.hand:
+            print("{0}: {1}".format(card.name, card.meaning))
